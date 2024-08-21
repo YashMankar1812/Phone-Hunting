@@ -15,7 +15,7 @@ async function getData(text){
     if(text==''){
         text= "iphone";
     }
-   const response = await fetch("https://openapi.programming-hero.com/api/phones?search=${text}");
+   const response = await fetch(`https://openapi.programming-hero.com/api/phones?search=${text}`);
    const result =  await response.json();
    propogatePhone(result.data);
 }
@@ -99,7 +99,7 @@ console.log(detail);
 const showDetailsHandler = async (id)=>{
     //console.log(id);
     // load data
-    const res= await fetch("https://openapi.programming-hero.com/api/phone/${id}");
+    const res= await fetch(`https://openapi.programming-hero.com/api/phone/${id}`);
     const data=await res.json();
     
     const phone=data.data;
@@ -128,6 +128,5 @@ const showPhoneDetails=(details)=>{
     }
     detailsSpec.innerText=string;
     releaseDate.innerText=${details.releaseDate};
-    
-`
+    `
 }
